@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :chatrooms, only: [:index, :show, :create, :destroy, :read]
+  resources :chatrooms, only: [:index, :show, :create, :destroy, :read] do
+    resources :comments, only: [:create]
+  end
+  
   root 'chatrooms#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

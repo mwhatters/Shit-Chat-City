@@ -2,11 +2,20 @@ var io = require('socket.io').listen(5001)
 redis = require('redis').createClient();
 redis.subscribe('comment-created')
 
+io.sockets.setMaxListeners(20)
+
 io.on('connection', function(socket) {
 	redis.on('message', function(channel, message){
 		var data = JSON.parse(message)
-		socket.emit('comment-created', data);
+		var comments = data.slice(1)
+		var room = data[0].url
+		console.log(comments)
+		// socket.join(room);
+		socket.emit(room, comments)
 		}
 	);
 });
 
+
+
+// 		socket.emit('comment-created', data);

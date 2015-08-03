@@ -7,10 +7,11 @@ var CommentBox = React.createClass({
     return JSON.parse(this.props.comment_presenter)
   },
 
-  // One way data stream
+  // One way data stream!
   handleCommentSubmit: function(formData) {
+    var chatroomURL = JSON.parse(this.props.comment_presenter).chatroom
     $.ajax({
-      url: '/comments',
+      url: '/chatrooms/'+chatroomURL+'/comments',
       data: formData,
       type: 'POST',
     });
@@ -24,7 +25,9 @@ var CommentBox = React.createClass({
   componentDidMount: function() {
     var socket = io('localhost:5001')
     var self = this
-    socket.on('comment-created', function(data) {
+    var room = JSON.parse(self.props.comment_presenter).chatroom
+    socket.on(room, function(data) {
+      console.log('I recieved data')
       self.addComment(data)
     })
   },
