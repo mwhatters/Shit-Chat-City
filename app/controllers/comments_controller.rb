@@ -5,9 +5,9 @@ class CommentsController < ApplicationController
   	@comment = Comment.new(author: params[:author], content: params[:content], chatroom_id: @chatroom.id)
   	@comment.save
 
-  	$redis.publish 'comment-created', @chatroom.last_four_comments
+  	$redis.publish 'comment-created', @chatroom.last_comments(4)
   	if request.xhr?
-  		render json: @chatroom.last_four_comments
+  		render json: @chatroom.last_comments(4)
   	else
   		redirect_to root_path
   	end

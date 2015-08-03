@@ -10,10 +10,10 @@ class Chatroom < ActiveRecord::Base
 		self.update_attributes(url: SecureRandom.hex(6))
 	end
 
-	def last_four_comments
+	def last_comments(num)
 		arr = []
 		arr << {url: self.url}
-		self.comments.last(4).each do |comment|
+		self.comments.last(num).each do |comment|
 			arr << {id: comment.id,
 							author: comment.author, 
 							content: comment.content, 

@@ -9,7 +9,7 @@ var CommentForm = React.createClass({
 		// TODO: SEND request to server
 		this.props.onCommentSubmit({author: author, content: content})
 
-		React.findDOMNode(this.refs.author).value = '';
+		// React.findDOMNode(this.refs.author).value = '';
 		React.findDOMNode(this.refs.content).value = '';
 	},
 
