@@ -1,6 +1,3 @@
-<h1> Welcome to SHIT-CHAT CITY </h2>
-
-<% @chatrooms.each do |chatroom| %>
-	<li><%= link_to "#{chatroom.name}, #{chatroom.id}", chatroom_path(chatroom) %></li>
-<% end %>
-
+<%= react_component('RoomBox', 
+                    {:room_presenter => @room_presenter.to_json}, 
+                    {:prerender => true}) %>

@@ -9,7 +9,6 @@ io.on('connection', function(socket) {
 		var data = JSON.parse(message)
 		var comments = data.slice(1)
 		var room = data[0].url
-		console.log(data)
 		console.log(comments)
 		// socket.join(room);
 		socket.emit(room, comments)

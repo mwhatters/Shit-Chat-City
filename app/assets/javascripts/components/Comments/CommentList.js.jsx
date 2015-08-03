@@ -14,4 +14,4 @@ var CommentList = React.createClass({
 			</div>
 		);
 	}
-});
+}); 
