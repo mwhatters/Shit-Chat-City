@@ -7,6 +7,7 @@ var CommentBox = React.createClass({
     return JSON.parse(this.props.presenter)
   },
 
+  // One way data stream
   handleCommentSubmit: function(formData) {
     $.ajax({
       url: '/comments',
@@ -19,6 +20,7 @@ var CommentBox = React.createClass({
     this.setState({comments: data})
   },
 
+  // TODO -- namespacing socket.io
   componentDidMount: function() {
     var socket = io('localhost:5001')
     var self = this
