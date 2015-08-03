@@ -1,9 +1,6 @@
 class CommentsController < ApplicationController
-  def index
-  	@presenter = {comments: Comment.last(4)}
-  end
-
   def create
+    @chatroom = Chatroom.find_by(url: params[:id])
   	@comment = Comment.new(author: params[:author], content: params[:content])
   	@comment.save
 

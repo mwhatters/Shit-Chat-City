@@ -6,5 +6,5 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
-10.times {Comment.create(author: Faker::Name.name, content: Faker::Lorem.paragraphs.join(' '))}
+10.times {Chatroom.create(name: Faker::App.name + ' chat')}
+60.times {Comment.create(author: Faker::Name.name, content: Faker::Lorem.paragraphs.join(' '), chatroom_id: rand(1..10))}

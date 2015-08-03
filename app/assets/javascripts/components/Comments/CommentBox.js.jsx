@@ -4,7 +4,7 @@
 
 var CommentBox = React.createClass({
   getInitialState: function() {
-    return JSON.parse(this.props.presenter)
+    return JSON.parse(this.props.comment_presenter)
   },
 
   // One way data stream
