@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'chatroom/index'
+
+  get 'chatroom/show'
+
+  get 'chatroom/create'
+
+  get 'chatroom/destroy'
+
   resources :comments, only: [:index, :create]
   
   get 'comments/index'
