@@ -127,7 +127,13 @@ a {
 	color: white;
 }
 
+.homeLink {
+	transition: color 0.5s ease;
+}
 
+.homeLink:hover {
+	color: #FF9F79;
+}
 
 
 

@@ -12,15 +12,15 @@ class Chatroom < ActiveRecord::Base
 
   def last_comments(num)
     arr = []
-    arr << {url: self.url}
     self.comments.last(num).each do |comment|
-      arr << {id: 				comment.id,
-              author: 		comment.author,
-              content: 		comment.content,
-              created_at: comment.created_at,
-              updated_at: comment.updated_at
-              }
+      arr.unshift( {id: 				comment.id,
+                    author: 		comment.author,
+                    content: 		comment.content,
+                    created_at: comment.created_at,
+                    updated_at: comment.updated_at
+                    })
     end
+    arr.unshift({url: self.url})
     arr.to_json
   end
 

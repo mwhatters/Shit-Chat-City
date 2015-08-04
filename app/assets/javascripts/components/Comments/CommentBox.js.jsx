@@ -40,7 +40,6 @@ var CommentBox = React.createClass({
         <h1>{chatroom}</h1>
         <CommentList comments={this.state.comments} />
         <CommentForm form={this.state.form} onCommentSubmit={this.handleCommentSubmit} />
-        <a href="/chatrooms" className="homeLink">Back to ChatRooms</a>
       </div>
     );
   }

@@ -7,7 +7,7 @@ class ChatroomsController < ApplicationController
 
 	def show
 		@chatroom = Chatroom.find_by(url: params[:id])
-		@comment_presenter = {chatroom: {url: @chatroom.url, name: @chatroom.name}, comments: @chatroom.comments.last(4)}
+		@comment_presenter = {chatroom: {url: @chatroom.url, name: @chatroom.name}, comments: @chatroom.comments.reverse.last(70)}
 	end
 	
 	def create
