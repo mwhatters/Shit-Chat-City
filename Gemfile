@@ -12,6 +12,7 @@ gem 'react-rails'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'redis'
+gem 'rails_12factor', group: :production
 
 
 group :development, :test do

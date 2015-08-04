@@ -3,6 +3,8 @@ var redis = require('redis')
 // var commentClient = redis.createClient();
 // var roomClient    = redis.createClient();
 
+
+
 var url = require('url');
 var redisURL = url.parse(process.env.REDISCLOUD_URL);
 
@@ -21,7 +23,6 @@ io.sockets.setMaxListeners(20)
 io.on('connection', function(socket) {
 	console.log('connection made')
 });
-
 
 	commentClient.on('message', function(channel, commentList){
 		console.log('comments recieved')
