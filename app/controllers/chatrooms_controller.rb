@@ -14,7 +14,7 @@ class ChatroomsController < ApplicationController
 		@chatroom = Chatroom.new(name: params[:name], password: params[:password])
 		@chatroom.save
 
-		$redis.publish 'room-created', Chatroom.all.to_json
+		Redis.current.publish 'room-created', Chatroom.all.to_json
 		if request.xhr?
 			render json: Chatroom.all.to_json
 		else

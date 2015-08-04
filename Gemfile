@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'dotenv-rails', :groups => [:development, :test]
+
 gem 'faker'
 gem 'rails', '4.2.3'
 gem 'pg'
