@@ -16,9 +16,11 @@ var CommentForm = React.createClass({
 	render: function() {
 		return (
 			<form ref="form" className="CommentForm" method="post" onSubmit={this.handleSubmit} >
+				<h3>Add a Comment</h3>
 				<input type="text" name="comment[author]" placeholder="Your name" ref="author"/><br/>
 				<textarea type="text" rows="10" cols="30" name="comment[content]" placeholder="Say something." ref="content"></textarea><br/>
-				<input type="submit" value="Send" />
+				<input type="submit" value="Send" /><br/>
+				<a href="/chatrooms" className="homeLink">Back to ChatRooms</a>
 			</form>
 		);
 	}

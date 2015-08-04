@@ -10,7 +10,6 @@ class ChatroomsController < ApplicationController
 		@comment_presenter = {chatroom: {url: @chatroom.url, name: @chatroom.name}, comments: @chatroom.comments.last(4)}
 	end
 	
-
 	def create
 		@chatroom = Chatroom.new(name: params[:name], password: params[:password])
 		@chatroom.save

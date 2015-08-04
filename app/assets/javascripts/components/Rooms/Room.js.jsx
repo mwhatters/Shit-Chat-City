@@ -2,9 +2,11 @@ var Room = React.createClass({
 		render: function() {
 			var url = '/chatrooms/' + this.props.url
 			return (
+				<a className="chatroomItem" href={url}>
 				<div>
-					<li><a href={url}>{this.props.name}</a></li>
+					<li>{this.props.name}</li>
 				</div>
+				</a>
 			);
 		}
 });

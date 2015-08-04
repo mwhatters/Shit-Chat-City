@@ -1,5 +1,6 @@
 //= require ./CommentForm
 //= require ./CommentList
+//= require_tree ../styles
 
 var CommentBox = React.createClass({
   getInitialState: function() {
@@ -38,9 +39,8 @@ var CommentBox = React.createClass({
       <div className="commentBox">
         <h1>{chatroom}</h1>
         <CommentList comments={this.state.comments} />
-        <h3>Add a Comment</h3>
         <CommentForm form={this.state.form} onCommentSubmit={this.handleCommentSubmit} />
-        <div className="homeLink">Back to ChatRooms</div>
+        <a href="/chatrooms" className="homeLink">Back to ChatRooms</a>
       </div>
     );
   }

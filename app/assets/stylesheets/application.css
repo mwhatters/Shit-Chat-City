@@ -13,3 +13,126 @@
  *= require_tree .
  *= require_self
  */
+
+
+* {
+	font-family: 'Questrial', sans-serif;;
+}
+
+h1, h2, p {
+	padding: 10px;
+	background-color: #62CECE;
+	margin: 0 auto;
+}
+
+li {
+    list-style-type: none;
+    font-size: 1.4em;
+    margin: 0 auto;
+}
+
+a {
+	  text-decoration: none;
+	  color: black;
+	}
+
+.chatroomItem:nth-of-type(even) {
+	background-color: #C1F575;
+}
+
+.chatroomItem:nth-of-type(odd) {
+	background-color: #CE9DE9;
+}
+
+.chatroomItem:nth-of-type(3n+0) {
+	background-color: #EB70A8;
+}
+
+.chatroomItem:nth-of-type(5n+0) {
+	background-color: #FF5555;
+}
+
+.chatroomItem {
+	padding: 30px;
+	display: inline-block;
+	text-align: center;
+	transition: background-color 0.5s ease;
+}
+
+.chatroomItem:hover {
+	background-color: #2F60AD;
+}
+
+/*------*/
+
+.RoomForm {
+	padding: 30px;
+}
+
+.RoomForm > input {
+	padding: 30px;
+	font-size: 1.4em
+}
+
+.CommentForm {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	padding: 10px;
+	font-size: 1em;
+	width: 40%;
+	border-top: solid 3px black;
+}
+
+.CommentForm > input {
+	padding: 10px;
+	margin-bottom: 3px;
+	font-size: 1em;
+	width: 95%;
+}
+
+.CommentForm > textarea {
+	padding: 10px;
+	font-size: 1em;
+	width: 95%;
+}
+
+.CommentForm > input[type=submit] {
+	font-size: 1em;
+	border: none;
+	margin-bottom: 10px;
+	width: 95%;
+	transition: background-color 0.5s ease;
+}
+
+.CommentForm > input[type=submit]:hover {
+	background-color: gray;
+}
+
+.Comment:nth-of-type(odd) {
+	background-color: #FE797C;
+}
+
+.Comment:nth-of-type(even) {
+	background-color: #FF9F79;
+}
+
+.Comment {
+		padding: 20px;
+		width: 55%;
+		line-height: 170%
+}
+
+.Comment > li > b {
+	color: white;
+}
+
+
+
+
+
+
+
+
+
+

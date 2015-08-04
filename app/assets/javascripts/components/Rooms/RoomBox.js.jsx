@@ -1,5 +1,7 @@
 //= require ./RoomList
 //= require ./Room
+//= require_tree ../styles
+
 
 var RoomBox = React.createClass({
 	getInitialState: function() {
@@ -24,8 +26,6 @@ var RoomBox = React.createClass({
 	  
 	  socket.on('room-created', function(data) {
 	    console.log('I recieved room data')
-	    console.log(data)
-	  	debugger
 	    self.addChatroom(data)
 	  });
 	},
@@ -35,8 +35,8 @@ var RoomBox = React.createClass({
 			<div className="roomBox">
 				<h1>Welcome to SHIT CHAT CITY</h1>
 				<RoomList chatrooms={this.state.chatrooms } />
-				<h2>Create your Own Room!</h2>
-				<p>Make sure you remember you password you shitter, as it is your only means of proving ownership</p>
+				<h2>Create your Own Shit Room!</h2>
+				<p>Make sure you remember the password you shitter, as it is your only means of proving ownership</p>
 				<RoomForm form={this.state.form} onChatroomSubmit={this.handleChatroomSubmit} />
 			</div>
 		);
