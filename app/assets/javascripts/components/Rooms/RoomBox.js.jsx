@@ -24,6 +24,8 @@ var RoomBox = React.createClass({
 	  
 	  socket.on('room-created', function(data) {
 	    console.log('I recieved room data')
+	    console.log(data)
+	  	debugger
 	    self.addChatroom(data)
 	  });
 	},

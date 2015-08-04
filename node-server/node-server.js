@@ -1,15 +1,17 @@
 var io = require('socket.io').listen(5001)
-redis = require('redis').createClient();
+var redis = require('redis')
+var commentClient = redis.createClient();
+var roomClient    = redis.createClient();
 
 
-
-redis.subscribe('comment-created')
-redis.subscribe('room-created')
+commentClient.subscribe('comment-created')
+roomClient.subscribe('room-created')
 
 io.sockets.setMaxListeners(20)
 
 io.on('connection', function(socket) {
-	redis.on('comment-created', function(channel, message){
+
+	commentClient.on('message', function(channel, message){
 		var data = JSON.parse(message)
 		var comments = data.slice(1)
 		var room = data[0].url
@@ -18,8 +20,12 @@ io.on('connection', function(socket) {
 		socket.emit(room, comments)
 		}
 	);
+
+	roomClient.on('message', function(channel, roomlist) {
+		console.log('room-created message recieved')
+		console.log(roomlist)
+		socket.emit('room-created', roomlist);
+		}
+	);
+
 });
-
-
-
-// 		socket.emit('comment-created', data);

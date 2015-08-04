@@ -15,10 +15,10 @@ var RoomForm = React.createClass({
 
 	render: function() {
 		return (
-			<form ref="form" className="RoomForm" method="post" onSubmit={this.handleSubmit}>
+			<form ref="form" className="RoomForm" method="post" onSubmit={this.handleSubmit} >
 				<input type="text" name="chatroom[name]" placeholder="Name" ref="name" /><br/>
-				<input type="password" name="chatroom[password]" placeholder="Password" ref="password"><br/>
-				<input type="submit" value="Create Room!">
+				<input type="password" name="chatroom[password]" placeholder="Password" ref="password" /><br/>
+				<input type="submit" value="Create Room!" />
 			</form>
 		);
 	}
