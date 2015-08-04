@@ -8,8 +8,10 @@ commentClient.subscribe('comment-created')
 roomClient.subscribe('room-created')
 
 io.sockets.setMaxListeners(20)
-
 io.on('connection', function(socket) {
+	console.log('connection made')
+});
+
 
 	commentClient.on('message', function(channel, commentList){
 		console.log('comments recieved')
@@ -17,7 +19,7 @@ io.on('connection', function(socket) {
 		
 		var comments = data.slice(1)
 		var room = data[0].url
-		socket.emit(room, comments)
+		io.sockets.emit(room, comments)
 		}
 	);
 
@@ -25,8 +27,7 @@ io.on('connection', function(socket) {
 		console.log('room-created message recieved')
 
 		var data = JSON.parse(roomList)
-		socket.emit('room-created', data);
+		io.sockets.emit('room-created', data);
 		}
 	);
 
-});
