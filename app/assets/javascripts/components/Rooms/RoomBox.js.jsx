@@ -21,7 +21,7 @@ var RoomBox = React.createClass({
 	},
 
 	componentDidMount: function() {
-	  var socket = io('localhost:5000')
+	  var socket = io('https://ssc-node.herokuapp.com')
 	  var self = this
 	  
 	  socket.on('room-created', function(data) {
