@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'faker'
 gem 'rails', '4.2.3'
 gem 'pg'
+gem 'uglifier'
 
 gem 'jquery-rails'
 gem 'react-rails'
