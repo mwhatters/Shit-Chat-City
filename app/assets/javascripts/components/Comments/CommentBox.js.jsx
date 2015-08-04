@@ -23,7 +23,7 @@ var CommentBox = React.createClass({
 
   // TODO -- namespacing socket.io
   componentDidMount: function() {
-    var socket = io('https://ssc-node.herokuapp.com/')
+    var socket = io('localhost:5001')
     var self = this
     var room = JSON.parse(self.props.comment_presenter).chatroom.url
     
