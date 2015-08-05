@@ -43,12 +43,9 @@ describe "making chatrooms" do
 
 		visit_page_and_make_room('shitty chat room', 'mr.robot')
 		4.times { add_window_and_submit_chat('shitty chat room') }
-
 		click_link('Back to ChatRooms')
-
 		visit_page_and_make_room('lets talk gandhi', 'gandhi')
 		4.times { add_window_and_submit_chat('lets talk gandhi') }
-
 		expect(page).to have_content('lets talk gandhi')
 	end
 end
