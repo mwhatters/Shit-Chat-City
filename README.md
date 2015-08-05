@@ -1,4 +1,4 @@
-### Shit Chat City
+# Shit Chat City
 
 This app was built on the premise that people will say some seriously weird shit if introduced to a foreign app that maintains complete anonymity. This premise has already been proven true with the likes of 4chan, reddit, etc..., but I wanted to breed a similar environemnt and see it happen before my very eyes.
 
@@ -20,7 +20,7 @@ Ultimately, ShitChatCity is a chatroom service, in which users can anonymously g
 
 ## How to contribute:
 
-# Cloning the Project
+### Cloning the Project
 
 This project is fronted by Rails and React, using a separate Node.Js application to render client interactions in real-time.
 Clone this project into a repo, and clone the node server as well. That can be found here:
@@ -44,15 +44,15 @@ node index.js
 
 This version of the project is currently still in development mode, so all the ports should be properly connected. Double check that both RoomBox.js.jsx and CommentBox.js.jsx are pointing to localhost:5001 and that the node server is listening to the local redis client. Rails has been configured to handle both the development and production environment without problems. This leads us to areas I need to improve:
 
-# Configuring environments
+### Configuring environments
 
 Work needs to be done in configuring our environment variables within our React views and the node server. 
 
-# Refactoring React
+### Refactoring React
 
 This page is not quite single page, and needs a wrapper component to bring our rooms and comments components together.
 
-# Additional Features
+### Additional Features
 
 There's a lot of basic features a chat app should have that I didn't include, some of them being:
 
