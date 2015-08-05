@@ -1,5 +1,4 @@
 var RoomList = React.createClass({
-
 	render: function(){
 		var roomNodes = this.props.chatrooms.map(function(room) {
 			return (

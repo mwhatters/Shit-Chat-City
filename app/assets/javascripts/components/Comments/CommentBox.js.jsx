@@ -23,14 +23,26 @@ var CommentBox = React.createClass({
 
   // TODO -- namespacing socket.io
   componentDidMount: function() {
-    var socket = io('https://ssc-node.herokuapp.com')
+    // var socket = io('https://ssc-node.herokuapp.com')
+    var socket = io('localhost:5001')
     var self = this
     var room = JSON.parse(self.props.comment_presenter).chatroom.url
+
+    socket.emit('room-joined', room);
     
     socket.on(room, function(data) {
       console.log('I recieved data')
       self.addComment(data)
     })
+  },
+
+  componentWillUnmount: function() {
+    var socket = io('localhost:5001')
+    var self = this
+    var room = JSON.parse(self.props.comment_presenter).chatroom.url
+    
+    console.log('room left')
+    socket.emit('room-left', room);
   },
 
   render: function() {
