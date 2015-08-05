@@ -1,6 +1,6 @@
 ### Shit Chat City
 
-This app was built on the premise that people will say some seriously weird shit if introduced to a foreign app that maintains complete anonymity. This premise has already been proven true, but I wanted to see it for myself.
+This app was built on the premise that people will say some seriously weird shit if introduced to a foreign app that maintains complete anonymity. This premise has already been proven true with the likes of 4chan, reddit, etc..., but I wanted to breed a similar environemnt and see it happen before my very eyes.
 
 It's also an experiment with using a once-foreign application architecture to build a realtime app.
 
