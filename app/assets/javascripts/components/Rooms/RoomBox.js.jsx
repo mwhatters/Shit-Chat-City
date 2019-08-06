@@ -3,7 +3,7 @@
 //= require_tree ../styles
 
 
-var RoomBox = React.createClass({
+var RoomBox = createReactClass({
 	getInitialState: function() {
 		return JSON.parse(this.props.room_presenter)
 	},

@@ -1,3 +1,5 @@
-<%= react_component('RoomBox', 
-                    {:room_presenter => @room_presenter.to_json}, 
-                    {:prerender => true}) %>
+<%= react_component(
+    'RoomBox', 
+    { room_presenter: @room_presenter.to_json }, 
+    { prerender: true }
+) %>

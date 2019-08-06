@@ -3,12 +3,13 @@ source 'https://rubygems.org'
 gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'faker'
-gem 'rails', '4.2.3'
+gem 'rails'
 gem 'pg'
 gem 'uglifier'
 
 gem 'jquery-rails'
 gem 'react-rails'
+gem 'webpacker'
 
 gem 'redis'
 gem 'rails_12factor', group: :production

@@ -1,6 +1,6 @@
 //= require ./Comment
 
-var CommentList = React.createClass({
+var CommentList = createReactClass({
 	render: function() {
 		var commentNodes = this.props.comments.map(function (comment) { 
 		return (

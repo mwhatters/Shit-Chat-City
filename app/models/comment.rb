@@ -1,4 +1,4 @@
-class Comment < ActiveRecord::Base
+class Comment < ApplicationRecord
 	belongs_to :chatroom
 
 	def serialize_comment

@@ -1,4 +1,4 @@
-class Chatroom < ActiveRecord::Base
+class Chatroom < ApplicationRecord
   has_many :comments, dependent: :destroy
   after_create :generate_url
 

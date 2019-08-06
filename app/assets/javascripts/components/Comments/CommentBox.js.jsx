@@ -2,7 +2,7 @@
 //= require ./CommentList
 //= require_tree ../styles
 
-var CommentBox = React.createClass({
+var CommentBox = createReactClass({
   getInitialState: function() {
     return JSON.parse(this.props.comment_presenter)
   },

@@ -1,4 +1,4 @@
-var RoomForm = React.createClass({
+var RoomForm = createReactClass({
 	handleSubmit: function(e) {
 		e.preventDefault();
 		var name = React.findDOMNode(this.refs.name).value.trim();

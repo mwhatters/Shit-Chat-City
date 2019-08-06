@@ -1,4 +1,4 @@
-var Room = React.createClass({
+var Room = createReactClass({
 		componentDidMount: function() {
 			var socket = io('localhost:5001')
 			var self = this
@@ -15,13 +15,9 @@ var Room = React.createClass({
 			var url = '/chatrooms/' + this.props.url
 			return (
 				<a className="chatroomItem" href={url}>
-					<div>
-
-						<li>{this.props.name}<br/>
-							<span className="userCount">{this.props.users}</span>
-						</li>
-
-					</div>
+					<li>{this.props.name}<br/>
+						<span className="userCount">{this.props.users}</span>
+					</li>
 				</a>
 			);
 		}

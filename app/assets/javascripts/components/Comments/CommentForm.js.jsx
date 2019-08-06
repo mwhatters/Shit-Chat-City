@@ -1,4 +1,4 @@
-var CommentForm = React.createClass({
+var CommentForm = createReactClass({
 	handleSubmit: function(e) {
 		e.preventDefault();
 		var author = React.findDOMNode(this.refs.author).value.trim();
